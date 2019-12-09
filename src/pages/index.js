@@ -9,5 +9,5 @@ export default {
   Login,
   Home,
   CreateWatchlist,
-  UserProfile
+  UserProfile,
 };

@@ -2,16 +2,41 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {useEffect, useState} from 'react';
 import actions  from '../redux/actions';
-import WatchlistShow from '../components/WatchlistShow'
+import WatchlistShow from '../components/WatchlistShow';
 
 
 const UserProfile = (props) => {
 console.log(props)
 return (
-  <div>
-    <h2>{props.user.username}'s Profile Page</h2>
+  <div className="prof-body">
+  <div >
+    <h2 className="prof-heading">{props.user.username}'s Profile Page</h2>
+    <img src="" />
 
-    {props.user.watchlists.map(watchlist => <div onClick={() => props.renderWatchlist()} >{watchlist.name}</div>)}
+  </div><div className='watchlist-box'>
+    {props.user.watchlists.map(watchlist =>
+      <ul>
+        <div className='list-card'>
+          <li  onClick={() => props.renderWatchlist()}>
+          <img className='card-img' src='https://static.bhphoto.com/images/images2500x2500/1366909880_910864.jpg'/>
+
+          <div className='card-name'>
+            {watchlist.name}
+          </div>
+
+          <div className='card-details'>
+            <i className='count-icon'><i className="fa fa-users"> </i></i>{watchlist.watchlist_players.length}
+              <div className='detail-name'>
+                Players
+              </div>
+          </div>
+
+
+          </li>
+        </div>
+      </ul>
+
+    )}</div>
 
     {props.showWatchlist === true ? <WatchlistShow/> : null}
   </div>

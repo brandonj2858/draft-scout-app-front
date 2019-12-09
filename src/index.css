@@ -14,6 +14,58 @@ code {
     monospace;
 }
 
+.prof-heading {
+  text-align: center;
+  width: 100vw;
+}
+
+/* watchlist cards */
+
+.card-img {
+  width: 25vw;
+  height: 25vw;
+  opacity: 0.95;
+}
+
+.list-card {
+  height: 35vw;
+  width: 25vw;
+  padding: 10px;
+  box-shadow: 0px 0px 130px 0 rgba(0, 0, 0, 0.38);
+  border-radius: 10px;
+}
+
+.card-details {
+  padding: 10px;
+
+}
+
+.detail-name {
+  font-family: sans-serif;
+}
+
+.count-icon {
+  width: 15px;
+  padding-right: 7px;
+  padding-left: 12px;
+  margin-bottom: 7px;
+  color: unset;
+  opacity: 0.50;
+}
+
+.card-name {
+  padding: .55em 0 .3em;
+  border-bottom: 1px solid #d8d8d8;
+  font-family: georgia;
+  text-align: left;
+  padding-left: 15px;
+  font-weight: 800;
+}
+
+
+
+
+
 .player-card {
   border: thin;
   border-color: black;
@@ -24,8 +76,22 @@ code {
   margin: 0px;
 }
 
-.nav-bar {
+.watchlist-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
+}
+
+
+
+.list_img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-bar {
+  width: 100vw;
   padding: 5px;
 }
 
@@ -60,6 +126,8 @@ code {
 }
 
 /* SideBar CSS*/
+
+
 .positionContainer {
   border: solid;
   width: 120px;
