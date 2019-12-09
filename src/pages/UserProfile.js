@@ -17,22 +17,35 @@ return (
     {props.user.watchlists.map(watchlist =>
       <ul>
         <div className='list-card'>
+
+
           <li  onClick={() => props.renderWatchlist()}>
-          <img className='card-img' src='https://static.bhphoto.com/images/images2500x2500/1366909880_910864.jpg'/>
+            <div className="list-card-inner">
+              <div className='list-card-front'>
+                <img className='card-img' src='https://static.bhphoto.com/images/images2500x2500/1366909880_910864.jpg'/>
 
-          <div className='card-name'>
-            {watchlist.name}
-          </div>
+                <div className='card-name'>
+                  {watchlist.name}
+                </div>
 
-          <div className='card-details'>
-            <i className='count-icon'><i className="fa fa-users"> </i></i>{watchlist.watchlist_players.length}
-              <div className='detail-name'>
-                Players
+                <div className='card-details'>
+                  <i className='count-icon'><i className="fa fa-users"> </i></i>{watchlist.watchlist_players.length}
+                    <div className='detail-name'>
+                      Players
+                    </div>
+                </div>
+
               </div>
+
+          <div className='list-card-back'>
+            {watchlist.players.map(player => <li>{player.name}</li>)}
           </div>
 
-
+            </div>
           </li>
+
+
+
         </div>
       </ul>
 
