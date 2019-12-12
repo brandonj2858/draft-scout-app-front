@@ -3,55 +3,30 @@ import {connect} from 'react-redux';
 import {useEffect, useState} from 'react';
 import actions  from '../redux/actions';
 import WatchlistShow from '../components/WatchlistShow';
+import ProfilePicture from '../components/ProfilePicture';
 
 
 const UserProfile = (props) => {
 console.log(props)
 return (
   <div className="prof-body">
-  <div >
-    <h2 className="prof-heading">{props.user.username}'s Profile Page</h2>
-    <img src="" />
 
-  </div><div className='watchlist-box'>
-    {props.user.watchlists.map(watchlist =>
-      <ul>
-        <div className='list-card'>
-
-
-          <li  onClick={() => props.renderWatchlist()}>
-            <div className="list-card-inner">
-              <div className='list-card-front'>
-                <img className='card-img' src='https://static.bhphoto.com/images/images2500x2500/1366909880_910864.jpg'/>
-
-                <div className='card-name'>
-                  {watchlist.name}
-                </div>
-
-                <div className='card-details'>
-                  <i className='count-icon'><i className="fa fa-users"> </i></i>{watchlist.watchlist_players.length}
-                    <div className='detail-name'>
-                      Players
-                    </div>
-                </div>
-
-              </div>
-
-          <div className='list-card-back'>
-            {watchlist.players.map(player => <li>{player.name}</li>)}
-          </div>
-
-            </div>
-          </li>
+  <h2 className="prof-heading">{props.user.username}'s Profile Page</h2>
+  <div className='prof-buttons'>
 
 
 
-        </div>
-      </ul>
+    <button type="button"  onClick={() => props.renderWatchlist()} class="btn btn-info">Show Watchlists</button>
+    <br/>
+    <button type="button" onClick={() => props.showAvatarComp()} class="btn btn-info">Upload Profile-Picture</button>
+    <br/>
+    <button type="button" class="btn btn-info">View Profile Settings</button>
 
-    )}</div>
 
-    {props.showWatchlist === true ? <WatchlistShow/> : null}
+
+  </div>
+    {props.showAvatarChange === true ? <div className='avatar-show'> <ProfilePicture/></div>: null}
+    {props.showWatchlist === true ? <div className='list-show'><WatchlistShow/></div> : null}
   </div>
 )
 
@@ -62,11 +37,13 @@ return (
 
 const mapStateToProps = state => (console.log(state.showWatchlist), {
   user: state.user,
-  showWatchlist: state.showWatchlist
+  showWatchlist: state.showWatchlist,
+  showAvatarChange: state.showAvatarChange
 })
 
 const mapDispatchToProps = ({
-  renderWatchlist: () => ({type: 'SHOW_WATCHLIST'})
+  renderWatchlist: () => ({type: 'SHOW_WATCHLIST'}),
+  showAvatarComp: () => ({type: 'SHOW_AVATAR_CHANGE'})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile)

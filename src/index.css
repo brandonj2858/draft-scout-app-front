@@ -17,24 +17,47 @@ code {
 .prof-heading {
   text-align: center;
   width: 100vw;
+  font-variant: small-caps;
+  color: #17a2b8;
+  padding: 15px;
 }
+
+/* Profile Page */
+
+.prof-buttons {
+  padding-left: 20px;
+  display: grid;
+}
+
+.watchlist-ul {
+  padding-left: 25px;
+  padding-top: 40px;
+  flex-wrap: wrap;
+}
+
+.user-avatar {
+  height: 135px;
+}
+
 
 /* watchlist cards */
 
 .card-img {
   width: 25vw;
   height: 25vw;
-  
+
 }
 
 .list-card {
-  height: 35vw;
-  width: 25vw;
+  height: 38vw;
+  width: 28vw;
   padding: 10px;
   box-shadow: 0px 0px 130px 0 rgba(0, 0, 0, 0.38);
   border-radius: 10px;
   perspective: 1000px;
-
+  margin-left: 40px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, rgba(148, 148, 148, 0.85) 5%, rgb(133, 133, 134) 50%, rgba(150, 150, 150, 0.58) 93%);
 }
 
 .list-card-back {
@@ -76,6 +99,7 @@ code {
 
 .detail-name {
   font-family: sans-serif;
+  color: #1b4c70;
 }
 
 .count-icon {
@@ -94,6 +118,7 @@ code {
   text-align: left;
   padding-left: 15px;
   font-weight: 800;
+  color: #1b4c70;
 }
 
 
@@ -103,6 +128,11 @@ code {
 .player-card {
   border: thin;
   border-color: black;
+}
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
 }
 
 .login-indicator {
@@ -137,7 +167,8 @@ code {
 
 .position-list {
   color: purple;
-  width: 40px;
+  width: 37px;
+  text-align: center;
 }
 
 .mainContainer{
@@ -167,6 +198,7 @@ code {
   width: 120px;
   flex-wrap: wrap;
   display: flex;
+  border-radius: 10px;
 }
 
 .pos-container-head {

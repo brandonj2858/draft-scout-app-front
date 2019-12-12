@@ -12,7 +12,9 @@ const initialState = {
   watchlists: { },
   formInput: '',
   showForm: false,
-  showWatchlist: false
+  showWatchlist: false,
+  showAvatarChange: false,
+  showUserCard: false
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -78,6 +80,10 @@ export default (state = initialState, { type, payload }) => {
     case 'CREATE_WATCHLIST':
       return {
         ...state,
+        user: {
+          ...state.user,
+          watchlists: [...state.watchlists, payload]
+        },
         watchlists: [...state.watchlists, payload]
       }
     case 'OPEN_FORM':
@@ -88,7 +94,9 @@ export default (state = initialState, { type, payload }) => {
     case 'SHOW_WATCHLIST':
       return {
         ...state,
-        showWatchlist: true
+        showWatchlist: true,
+        showAvatarChange: false,
+        showUserCard: false
       }
     case 'HANDLE_COMMENT':
       return {
@@ -106,6 +114,13 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         watchlists: newWatchlists
+      }
+    case 'SHOW_AVATAR_CHANGE':
+      return {
+        ...state,
+      showWatchlist: false,
+      showAvatarChange: true,
+      showUserCard: false
       }
     default:
       return state;

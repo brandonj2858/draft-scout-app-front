@@ -6,7 +6,10 @@ const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 
 // Redux Actions
 
-
+const showAvatarComp = boolean => ({
+  type: 'SHOW_AVATAR_CHANGE',
+  payload: boolean
+})
 
 const renderWatchlist = boolean => ({
   type: 'SHOW_WATCHLIST',
@@ -78,6 +81,7 @@ const fetchWatchlistsAction = watchlistObj => (console.log(watchlistObj), {
   payload: watchlistObj
 })
 
+
 /*
 const renderPopUp = boolean => dispatch => {
   dispatch(renderPopUpAction)
@@ -93,10 +97,30 @@ const renderPopUp = boolean => dispatch => {
 
 // Fetch
 
+
 const addComment = commentObj => ({
   type: 'HANDLE_COMMENT',
   payload: commentObj
 })
+
+const changeAvatar = (userObj, imgObj) => dispatch => {
+  const formData = new FormData()
+  formData.append("file", imgObj[0])
+
+  fetch(`http://localhost:3000/users/${userObj}`, {
+    method: 'PATCH',
+    headers: {
+      "Content-Type": "multipart/formdata",
+      "Accept": "multipart/formdata"
+    },
+    body: {
+      avatar: imgObj[0]
+    }
+  })
+  .then(res => res.json())
+  .then(resObj => console.log(resObj))
+}
+
 
 const postComment = (userId, playerId, comment) => dispatch => {
 
@@ -280,5 +304,7 @@ export default {
   submitWatchlist,
   openForm,
   renderWatchlist,
-  postComment
+  postComment,
+  showAvatarComp,
+  changeAvatar
 };
