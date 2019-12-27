@@ -5,7 +5,34 @@ import actions  from '../redux/actions';
 
 const ProfilePicture = (props) => {
 
-  const [setImgSource, imgSource] = useState('')
+
+  const [imgUrl] = useState(document.querySelector('.this-img').src)
+
+
+
+  function previewFile() {
+  var preview = document.querySelector('.this-img');
+  var file    = document.querySelector('input[name=pic]').files[0];
+  var reader  = new FileReader();
+
+
+  reader.addEventListener("load", function () {
+    console.log(reader.result);
+    preview.src = reader.result;
+
+
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file)
+
+  }
+}
+
+  function getPreviewData() {
+
+  }
+
 
   return (
     <div>
@@ -17,12 +44,21 @@ const ProfilePicture = (props) => {
       </div>
       <form onSubmit={(e) => {
         e.preventDefault()
-        props.changeAvatar(props.user.id, e.target['pic'].files)
+
+        props.changeAvatar(props.user.id, imgUrl)
       }}>
+        <img id='blah' className='pic-test' src='https://www.bostonherald.com/wp-content/uploads/2019/12/snowms010.jpg'/>
+        <input type="file" name="pic"
+        onChange={(e) => {
 
-        <input type="file" name="pic" accept="image/*"/>
+          previewFile(e.target)
+          console.log(imgUrl);
+        }
+         }
+         accept="image/*"
+         />
         <input type='submit'/>
-
+        <img className='this-img' src=''/>
       </form>
 
     </div>
@@ -33,8 +69,8 @@ const ProfilePicture = (props) => {
 }
 
 const mapStateToProps = state => ({
-  user: state.user
-
+  user: state.user,
+  showAvatarChange: state.showAvatarChange
 })
 
 const mapDispatchToProps = dispatch => ({

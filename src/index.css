@@ -9,6 +9,14 @@ body {
     background-color:  #f2f2f2;
 }
 
+.this-img {
+  width: 120px;
+}
+
+.pic-test {
+  width: 100px
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

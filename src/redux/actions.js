@@ -104,17 +104,18 @@ const addComment = commentObj => ({
 })
 
 const changeAvatar = (userObj, imgObj) => dispatch => {
-  const formData = new FormData()
-  formData.append("file", imgObj[0])
+//  const formData = new FormData()
+//  formData.append("file", imgObj)
+
 
   fetch(`http://localhost:3000/users/${userObj}`, {
     method: 'PATCH',
     headers: {
-      "Content-Type": "multipart/formdata",
-      "Accept": "multipart/formdata"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
     body: {
-      avatar: imgObj[0]
+      avatar: imgObj
     }
   })
   .then(res => res.json())

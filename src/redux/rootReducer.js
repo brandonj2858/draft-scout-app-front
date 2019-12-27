@@ -14,7 +14,9 @@ const initialState = {
   showForm: false,
   showWatchlist: false,
   showAvatarChange: false,
-  showUserCard: false
+  showUserCard: false,
+  fileUpload: '',
+  savedUrl: ''
 }
 
 export default (state = initialState, { type, payload }) => {
