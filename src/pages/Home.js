@@ -23,7 +23,7 @@ const Home = (props) => {
   <div className = "mainContainer">
     <div id="left" className="column">
 
-      <div className='top-left'><h3>Rankings by Pos.</h3> </div>
+      <div className='top-left'><h3 className='rank-head'>Rankings by Pos.</h3> </div>
       <div className='bottom'>
 
       <br/>

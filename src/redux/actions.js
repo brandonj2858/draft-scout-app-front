@@ -81,6 +81,10 @@ const fetchWatchlistsAction = watchlistObj => (console.log(watchlistObj), {
   payload: watchlistObj
 })
 
+const renderProfileSettings = boolean => ({
+  type: 'RENDER_PROFILE_SETTINGS',
+  payload: boolean
+})
 
 /*
 const renderPopUp = boolean => dispatch => {
@@ -111,11 +115,10 @@ const changeAvatar = (userObj, imgObj) => dispatch => {
   fetch(`http://localhost:3000/users/${userObj}`, {
     method: 'PATCH',
     headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
+      "Accept": "application/json",
     },
     body: {
-      avatar: imgObj
+      pic: imgObj
     }
   })
   .then(res => res.json())
@@ -307,5 +310,6 @@ export default {
   renderWatchlist,
   postComment,
   showAvatarComp,
-  changeAvatar
+  changeAvatar,
+  renderProfileSettings
 };

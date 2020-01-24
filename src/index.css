@@ -228,17 +228,22 @@ code {
 .top-left {
     flex-shrink: 0;
     background-color: black;
-    color: white;
+    color: #f2f2f2;
     padding: 20px;
+    padding-left: 10px;
     width: 20vw;
     border-right: solid;
     border-color: grey;
     border-width: thin;
 }
 
+.rank-head {
+  font-weight: 600;
+}
+
 .top-right {
     background-color: black;
-    color: white;
+    color: #f2f2f2;
     flex-shrink: 0;
     display: inline-flex;
     padding: 20px;
@@ -263,6 +268,7 @@ position:relative;
 
 .sep-head {
   text-align: center;
+  font-weight: 600;
 }
 
 .id-section {
@@ -404,5 +410,5 @@ ul {
 }
 
 #right {
-  width: 85vw;
+  width: 80vw;
 }

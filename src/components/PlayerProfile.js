@@ -35,15 +35,14 @@ const PlayerProfile = (props) => {
       <div className='prof-head'>
       {props.user ? <i className="fa fa-plus" onClick={() => props.renderPopUp(true)}>Add To Watchlist</i> : null}<br/>
       {props.showPopUp === true ? <WatchlistForm/> : null}
-      Name: {props.player.name} <br/> Height: {props.player.height}<br/> Weight: {props.player.weight}
+      <strong>Name</strong>: {props.player.name} <br/> <strong>Height</strong>: {props.player.height}<br/> <strong>Weight</strong>: {props.player.weight}
       <br/>
-      {props.player ? `School: ${props.player.school.name}` : null }
-      <br/>
-      {props.player ? `Position: ${props.player.position.name}`: null}
+      {props.player ? <div><strong>School</strong>: {props.player.school.name}</div> : null }
+      {props.player ? <div><strong>Position</strong>: {props.player.position.name}</div> : null}
       </div>
       <br/>
       <div className='report-div'>
-    Scouting Report: {props.player.scouting_report}
+    <strong>Scouting Report</strong>: {props.player.scouting_report}
       </div>
 
     </div>

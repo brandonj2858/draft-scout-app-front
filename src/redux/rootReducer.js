@@ -16,7 +16,8 @@ const initialState = {
   showAvatarChange: false,
   showUserCard: false,
   fileUpload: '',
-  savedUrl: ''
+  savedUrl: '',
+  showProfileSettings: false
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -98,7 +99,8 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         showWatchlist: true,
         showAvatarChange: false,
-        showUserCard: false
+        showUserCard: false,
+        renderProfileSettings: false
       }
     case 'HANDLE_COMMENT':
       return {
@@ -122,7 +124,16 @@ export default (state = initialState, { type, payload }) => {
         ...state,
       showWatchlist: false,
       showAvatarChange: true,
-      showUserCard: false
+      showUserCard: false,
+      renderProfileSettings: false
+      }
+    case 'RENDER_PROFILE_SETTINGS':
+      return {
+        ...state,
+        showWatchlist: false,
+        showAvatarChange: false,
+        showUserCard:false,
+        showProfileSettings: true
       }
     default:
       return state;

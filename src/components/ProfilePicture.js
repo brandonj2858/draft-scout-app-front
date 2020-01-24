@@ -6,7 +6,8 @@ import actions  from '../redux/actions';
 const ProfilePicture = (props) => {
 
 
-  const [imgUrl] = useState(document.querySelector('.this-img').src)
+  const [imgUrl] = useState('')
+  var reader  = new FileReader();
 
 
 
@@ -14,6 +15,7 @@ const ProfilePicture = (props) => {
   var preview = document.querySelector('.this-img');
   var file    = document.querySelector('input[name=pic]').files[0];
   var reader  = new FileReader();
+  console.log(props.user.avatar)
 
 
   reader.addEventListener("load", function () {
@@ -40,14 +42,22 @@ const ProfilePicture = (props) => {
 
       <div className='current-avatar'>
         <h5>Current Picture</h5>
-        <img className='user-avatar' src={props.user.avatar}/>
+        <img className='user-avatar' src={(props.user.avatar)}/>
       </div>
-      <form onSubmit={(e) => {
+      <form className="picture_form" onSubmit={(e) => {
         e.preventDefault()
-
-        props.changeAvatar(props.user.id, imgUrl)
+        const pic_upload = document.querySelector(".pic")
+        const pic_form = document.querySelector(".picture_form")
+        const formData = new FormData(pic_form);
+        const formData2 = new FormData();
+        formData2.append(
+          "image_file",
+          pic_upload.files[0],
+          pic_upload.files[0].name
+        );
+        props.changeAvatar(props.user.id, formData2)
+        console.log(formData);
       }}>
-        <img id='blah' className='pic-test' src='https://www.bostonherald.com/wp-content/uploads/2019/12/snowms010.jpg'/>
         <input type="file" name="pic"
         onChange={(e) => {
 

@@ -12,8 +12,8 @@ const Nav = (props) => {
   return (
     <nav className='nav-bar' style={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <Link to="/">Home</Link>
-      <Link to="/signup">Signup</Link>
-      <Link to="/login">Login</Link>
+      {props.user ? null : <Link to="/signup">Signup</Link>}
+      {props.user ? null : <Link to="/login">Login</Link>}
       {props.user ? <Link to="/user_profile">Profile</Link> : null}
       <Link to="/" onClick={handleLogout}>
         Logout
