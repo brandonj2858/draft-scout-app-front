@@ -32,8 +32,14 @@ code {
 
 /* Profile Page */
 
+.prof-info {
+  text-align: center;
+  color: #17a2b8;
+  padding-top: 50px;
+}
+
 .prof-buttons {
-  padding-left: 20px;
+
   display: grid;
 }
 

@@ -22,7 +22,6 @@ return (
 
     <button type="button"  onClick={() => props.renderWatchlist()} class="btn btn-info">Show Watchlists</button>
     <br/>
-    <br/>
     <button type="button" onClick={() => props.renderProfileSettings()} class="btn btn-info">View Profile Settings</button>
 
 

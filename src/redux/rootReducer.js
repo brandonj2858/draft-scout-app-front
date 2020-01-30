@@ -100,7 +100,7 @@ export default (state = initialState, { type, payload }) => {
         showWatchlist: true,
         showAvatarChange: false,
         showUserCard: false,
-        renderProfileSettings: false
+        showProfileSettings: false
       }
     case 'HANDLE_COMMENT':
       return {
