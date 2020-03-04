@@ -30,6 +30,7 @@ const Home = (props) => {
       <ul className='positions-ul'>
     <PositionList/>
       </ul>
+      <div><input placeholder="Search Players" className="search-bar" type="text"/> </div>
       </div>
     </div>
     <div id='right' className='column'>

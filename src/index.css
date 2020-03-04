@@ -185,6 +185,10 @@ code {
   text-align: center;
 }
 
+.search-bar {
+
+}
+
 .mainContainer{
   display: flex;
   width: 100vw;
@@ -378,7 +382,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 .watchlist_card {
+  flex-wrap: wrap;
   display: flex;
+  justify-content: space-between;
 }
 
 .pop-up-body {
@@ -386,7 +392,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
   left: 15%;
   right: 15%;
-  top: 15%;
   bottom: 15%;
   margin: auto;
   padding: 10px;
@@ -395,8 +400,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 .user-watchlists {
-  flex: auto;
-  flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 2.5px;
   text-align: center;
   width: 200px;
   border: thin;

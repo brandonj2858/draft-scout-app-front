@@ -29,7 +29,10 @@ const PositionList = (props) => {
     {filterOffense(props.positions).map(position => <li onClick={() => props.handleClickAction(position.id)} key={position.id} className="position-list">{position.name}</li>)}
     <div className="pos-container-head">Defense</div>
     {filterDefense(props.positions).map(position => <li onClick={() => props.handleClickAction(position.id)} key={position.id} className="position-list">{position.name}</li>)}
-   </div>)
+    
+   </div>
+
+ )
 }
 
 const mapStateToProps = state => ({
